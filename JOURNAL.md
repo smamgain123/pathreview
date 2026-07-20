@@ -1,21 +1,25 @@
-## Week 7 — Issue selection
+# AI201 Open-Source Contribution Journal
 
-**Issue link:** https://github.com/ascherj/pathreview/issues/106
+## Week 7: Issue Selection
 
-**Issue title:** Shared test fixture for a sample user profile is missing from tests/fixtures/
+### Selected Issue
 
-**Tier:** [x] Tier 1  [ ] Tier 2  [ ] Tier 3
+**Issue:** [#106 — Shared test fixture for a sample user profile is missing from tests/fixtures](https://github.com/ascherj/pathreview/issues/106)
 
-**Problem summary:**
+### Issue Tier
 
-The test suite is missing a shared sample user profile fixture that multiple integration tests depend on. As a result, tests either duplicate setup logic or cannot run because the expected fixture no longer exists. The fix is to restore a reusable sample profile fixture so tests can consistently use the same realistic test data, making the test suite easier to maintain and more reliable.
+This issue is labeled **Tier 1**, which is appropriate for my current comfort level with the PathReview codebase. I am still learning the repository structure, so a focused test-fixture task gives me an opportunity to understand the project’s testing patterns without changing complex production logic.
 
-**Issue selection notes ("Is this issue right for me?"):**
+### Why I Selected This Issue
 
-I chose this issue because it is a Tier 1 issue with a clearly defined scope and estimated effort of one to two hours. It focuses on improving the project's test infrastructure rather than modifying production code, making it a good first contribution to a larger codebase. The affected files are clearly identified, and the expected outcome is straightforward to verify.
+I selected this issue because its scope is small and clearly defined. The task is centered on restoring one shared test-data file rather than modifying several services or application features. It also gives me practical experience working with an existing test suite, understanding fixture structure, and making a contribution that can be verified by running tests.
 
-**Branch name:** test/106-shared-user-profile-fixture
+This issue is a good fit for me because I can inspect how the tests load sample profile data, compare the expected schema with existing models and fixtures, and create the missing file using realistic but non-sensitive sample information.
 
-**Setup confirmation:** [x] App runs locally at localhost:5173
+### Problem Summary
 
-**Cohort ledger:** [x] Issue added to cohort ledger
+The PathReview test suite expects a reusable sample user profile fixture inside the `tests/fixtures/` directory, but that fixture is currently missing.
+
+Because the file is unavailable, tests that depend on the shared sample profile may fail, be skipped, or require duplicated setup data. This makes the test suite less reliable and harder to maintain.
+
+A successful fix would add the missing fixture in the expected location and format. The fixture should contain realistic sample profile data, such as a GitHub username, resume information, and repository examples, so the relevant tests can load the same consistent data and run successfully.

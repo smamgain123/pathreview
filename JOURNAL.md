@@ -29,3 +29,45 @@ I selected this issue because it has a small and clearly defined scope. Before i
 **Setup confirmation:** [x] The application runs locally.
 
 **Cohort ledger confirmation:** [x] Issue #106 is recorded in the cohort issue ledger.
+
+# Week 8: Implementation
+
+## Reproduction
+
+I first reproduced the issue by creating an integration test that asserted the existence of `tests/fixtures/sample_profiles/basic_profile.json`. The test failed with an AssertionError because the fixture did not exist, confirming the issue before making any changes.
+
+**Reproduction commit:** `9de7652`
+
+---
+
+## Root Cause
+
+The repository was missing the shared fixture file referenced by the issue description. The issue manifest and evaluation script both referenced `tests/fixtures/sample_profiles/basic_profile.json`, but the directory and file were absent.
+
+---
+
+## Fix
+
+I created the missing directory and restored `basic_profile.json` with a realistic sample profile containing:
+- GitHub username
+- Resume information
+- Two sample repositories
+
+This matches the requirements described in the issue.
+
+**Fix commit:** `4c66e22`
+
+---
+
+## Verification
+
+- ✅ Reproduction test failed before the fix.
+- ✅ Reproduction test passed after restoring the fixture.
+- ✅ Ran the full test suite.
+- ✅ Remaining failures were unrelated `ModuleNotFoundError` dependency issues already present in the local environment.
+
+---
+
+## Reflection
+
+This issue reinforced the importance of reproducing a bug before implementing a fix. Rather than creating files based on assumptions, I traced references in the repository, confirmed the expected location and structure, wrote a failing reproduction test, and then restored only the missing fixture. This resulted in a small, targeted change with clear verification.

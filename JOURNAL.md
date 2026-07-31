@@ -73,3 +73,44 @@ This matches the requirements described in the issue.
 This issue reinforced the importance of reproducing a bug before implementing a fix. Rather than creating files based on assumptions, I traced references in the repository, confirmed the expected location and structure, wrote a failing reproduction test, and then restored only the missing fixture. This resulted in a small, targeted change with clear verification.
 
 
+### Check-in 2 (end-of-week)
+
+**Branch:**
+`test/106-shared-user-profile-fixture`
+
+**Pull Request:**
+https://github.com/smamgain123/pathreview/pull/1
+
+**What I built:**
+Completed Issue #106 by restoring the missing shared sample profile fixture (`tests/fixtures/sample_profiles/basic_profile.json`) and adding an integration test to verify that the fixture exists and can be loaded successfully. I also updated the project documentation in `PLAN.md` and `JOURNAL.md`.
+
+**Tests modified:**
+- `tests/integration/test_sample_profile_fixture.py`
+
+**What the tests cover:**
+The integration test verifies that the shared sample profile fixture exists at the expected location and can be loaded successfully. This prevents regressions where the fixture is accidentally removed, renamed, or omitted from future changes.
+
+**Self-review:**
+- [x] Ran `make check` (only pre-existing repository lint failures unrelated to this issue remain)
+- [x] Ran `make test-unit` (only pre-existing repository test failures unrelated to this issue remain)
+
+**Work completed:**
+
+- Restored the missing shared sample profile fixture.
+- Added a reproduction integration test.
+- Verified the new fixture test passes independently.
+- Ran repository verification commands and documented existing unrelated failures.
+- Opened a draft pull request summarizing the implementation and testing.
+
+**Testing performed:**
+
+- `pytest -v tests/integration/test_sample_profile_fixture.py`
+  - ✅ 1 test passed
+- `make check`
+  - Repository contains pre-existing lint issues unrelated to this change.
+- `make test-unit`
+  - Repository contains pre-existing failing tests unrelated to this change.
+
+**Reflection:**
+
+This project reinforced the importance of reproducing an issue before fixing it, verifying the fix with a focused regression test, and documenting repository-wide issues separately from changes introduced by the current work.

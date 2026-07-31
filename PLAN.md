@@ -114,3 +114,18 @@ Before implementing:
 - [x] Fixture restored.
 - [x] Reproduction test passes.
 - [x] Full test suite run confirms remaining failures are unrelated dependency issues.
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+Completed the implementation for Issue #106 by first reproducing the issue with a failing integration test, then restoring the missing shared fixture at `tests/fixtures/sample_profiles/basic_profile.json`. Updated `PLAN.md` with implementation details, risks, investigation steps, edge cases, and verification.
+
+**Next steps:**
+Run `make check` and `make test-unit`, document any pre-existing failures, open a draft pull request, request peer or mentor feedback, and complete Check-in 2 with the final PR link before submission.
+
+**Blockers:**
+None.
+
+---

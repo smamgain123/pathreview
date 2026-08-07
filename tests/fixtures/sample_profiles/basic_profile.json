@@ -1,0 +1,25 @@
+{
+  "github_username": "janedoe",
+  "resume": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "summary": "Software Engineer with experience building Python backend services and React applications.",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "React",
+      "PostgreSQL",
+      "Docker"
+    ]
+  },
+  "repositories": [
+    {
+      "name": "weather-app",
+      "description": "A React weather application using the OpenWeatherMap API."
+    },
+    {
+      "name": "task-manager",
+      "description": "A FastAPI task management backend with PostgreSQL."
+    }
+  ]
+}

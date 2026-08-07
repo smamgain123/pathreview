@@ -114,3 +114,42 @@ The integration test verifies that the shared sample profile fixture exists at t
 **Reflection:**
 
 This project reinforced the importance of reproducing an issue before fixing it, verifying the fix with a focused regression test, and documenting repository-wide issues separately from changes introduced by the current work.
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
+
+**Summary of feedback:**
+
+No reviewer or maintainer feedback was received during the Summer 2026 offering. My pull request remained open, so there were no review comments to address before completing the module.
+
+**How you responded:**
+
+N/A.
+
+---
+
+### Reflection
+
+**What was harder than you expected?**
+
+The hardest part was understanding how the issue fit into a codebase that I did not write. My issue looked simple at first, but I needed to trace references to `tests/fixtures/sample_profiles/basic_profile.json` through files like `scripts/issues_manifest.json` and `scripts/run_evals.py` before I understood what the fixture was expected to contain. I also had to separate repository-wide issues from problems related to my own change.
+
+**What did you learn about working in a large codebase?**
+
+I learned that reading existing code is just as important as writing new code. Before implementing the fix, I searched the repository to understand where the missing fixture was referenced and how it would be used. This experience showed me that making a small, well-tested change is often more valuable than making a large change without understanding the surrounding code.
+
+**How did AI tools help — and where did they fall short?**
+
+AI was very helpful for navigating an unfamiliar repository, creating a structured implementation plan, and explaining the purpose of different files. It also helped me organize my documentation and think through edge cases. However, AI could not determine the expected fixture structure on its own—I still had to inspect the repository, read the issue description, and verify my assumptions by running the tests locally.
+
+**What would you do differently if you started over?**
+
+If I started over, I would spend more time reading the contribution guidelines and PR template before writing any code. Earlier in the project I lost points because my documentation did not exactly match the required template. I also would have created my reproduction test earlier because it made it much easier to verify that the final implementation solved the correct problem.
+
+**What are you most proud of from this module?**
+
+I am most proud of following a complete open-source contribution workflow instead of only writing code. I reproduced the issue, documented an implementation plan, restored the missing shared fixture, added an integration test, created a pull request with testing instructions, and kept my journal updated throughout the four-week process. That gave me experience with the same development process used in real software teams.
